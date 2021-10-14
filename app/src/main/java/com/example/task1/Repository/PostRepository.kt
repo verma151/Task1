@@ -13,6 +13,7 @@ class PostRepository {
         fun getPost():Flow<List<Post>> = flow {
             val response=RetrofitBuilder.api.getPost()
             emit(response)
+            delay(5000)
         }.flowOn(Dispatchers.IO)
     }
 }
